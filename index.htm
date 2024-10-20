@@ -27,7 +27,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #444;
+            position: relative;
+           
         }
         .navbar .logo {
             font-size: 24px;
@@ -108,6 +109,42 @@
             max-width: 100%;
             border-radius: 5px;
         }
+         .audio-container {
+        margin-top: 20px; /* Adds some space between the button and audio */
+    }
+    .audio-container {
+        margin-top: 20px; /* Space between button and audio */
+        background-color: #444; /* Dark background for contrast */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px; /* Inner padding */
+        display: flex; /* Flexbox for centering */
+        justify-content: center; /* Center the audio player */
+        align-items: center; /* Center vertically */
+    }
+    
+    .audio-container audio {
+        width: 100%; /* Full width of the container */
+        outline: none; /* Remove default outline */
+        border: none; /* Remove default border */
+        background-color: transparent; /* Transparent background */
+        color: #fff; /* Text color for controls */
+    }
+    
+    /* Optional: Add hover effect for the audio controls */
+    .audio-container audio::-webkit-media-controls-panel {
+        background-color: #555; /* Darker background for controls */
+        border-radius: 8px; /* Match container's rounded corners */
+    }
+    
+    .audio-container audio::-webkit-media-controls-play-button {
+        background-color: #ff6600; /* Custom play button color */
+        border-radius: 50%; /* Round play button */
+        padding: 5px; /* Add some padding */
+    }
+    
+    .audio-container audio::-webkit-media-controls-volume-slider {
+        background-color: #ff6600; /* Volume slider color */
+    }
 
         .content {
            display: flex;
@@ -327,9 +364,16 @@
             <h1>“Elevate Your Spirit with Victory Scented Fragrances!”</h1>
             <p>Shop now and embrace the sweet smell of victory with JD Fragrance.</p>
             <a class="btn" href="product.htm">Shop Now</a>
+            <!-- Move the audio element below the button -->
+            <div class="audio-container">
+                <audio controls>
+                    <source src="audio/eros.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </div>
         <div class="image">
-            <img src="images/fahrenheit.jpg " alt="Fahrenheit Eau de Toilette by Christian Dior">
+            <img src="images/fahrenheit.jpg" alt="Fahrenheit Eau de Toilette by Christian Dior">
         </div>
     </div>
 
