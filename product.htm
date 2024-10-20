@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <title>JD Fragrance</title>
+    <style>
+        
+        body {
+             margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6; /* More comfortable reading */
+    letter-spacing: 0.5px; /* Adds slight spacing */
+        }
+        header {
+            background-color: #333;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .logo {
+            color: #ff6600;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s, transform 0.2s;;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff6600;
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+        }
+        .icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        .products {
+            padding: 1rem;
+        }   
+        .products h2 {
+            color: #ff6600;
+        }
+        .product-grid {
+            display: grid;
+           
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+             
+            gap: 1rem;
+            padding: 1rem 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 1rem;
+        }
+        .product-card {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px; /* Set consistent height */
+            object-fit: cover; /* Ensures the image covers the area without stretching */
+            object-position: center; /* Centers the image */
+        }
+        
+        .rating {
+            color: #ffd700;
+        }
+        .footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .footer .social-icons {
+            margin: 20px 0;
+        }
+        .footer .social-icons i {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .footer .social-icons i:hover {
+            color: #ff6600;
+        }
+        .footer p {
+            color: #ff6600;
+            margin: 0;
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            font-size: 24px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
+        }
+        /* Tablet View (for iPads) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            header {
+                padding: 20px 30px;
+            }
+            .logo {
+                font-size: 28px;
+            }
+            .navbar ul {
+                display: flex;
+                gap: 1.5rem;
+            }
+            .hamburger {
+                display: none;
+            }
+            .icons {
+                gap: 1.5rem;
+                font-size: 18px;
+            }
+            .filters {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+            .filters span {
+                flex: 1;
+                text-align: center;
+                font-size: 14px;
+            }
+            .product-grid {
+               
+                gap: 1rem;
+                padding: 1rem 2rem;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+                gap: 1rem;
+            }
+            main {
+                flex-grow: 1; /* Make main content grow to take up space */
+            }
+            .product-card img {
+                height: 200px;
+            }
+            .footer {
+                padding: 30px 20px;
+            }
+            .footer .social-icons i {
+                font-size: 20px;
+                margin: 0 10px;
+            }
+        }
+
+
+       
+
+
+        @media (max-width: 767px) {
+            /* Adjust header layout for mobile */
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px;
+             
+           
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+            nav ul.show {
+                display: flex; /* Show navigation when 'show' class is applied */
+            }
+            nav ul li {
+                margin: 1px 0;
+            }
+            nav ul.active {
+                display: flex;
+                cursor: pointer;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger on mobile */
+               
+            }
+
+            /* Adjust filters and products layout for mobile */
+            .filters {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            .filters span {
+                flex: 1 1 45%;
+                margin: 3px 0;
+            }
+        
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+                gap: 0.5rem;
+            }
+            .product-card img {
+                width: 100%; /* Adjust image size to fit mobile screens */
+                height: auto;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two products per row on mobile */
+                gap: 0.5rem;
+            }
+            .product-card img {
+                width: 100%; /* Ensure image width adjusts to mobile */
+                height:auto; /* Consistent height for all images in mobile */
+                object-fit: cover; /* Maintain image aspect ratio */
+                max-height: 200px;
+            }
+            .hamburger div{
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin:3px 0;
+               }
+        }
+
+        @media print {
+            /* Remove background colors */
+            body, header, footer, .product-card {
+                background-color: #fff;
+                color: #000;
+            }
+    
+            /* Hide navigation, icons, and other non-essential elements */
+            header, .icons, .filters, .hamburger, .social-icons, .product-card img {
+                display: none;
+            }
+    
+            /* Adjust layout for easy reading */
+            .product-grid {
+                grid-template-columns: 1fr; /* Stack products vertically */
+            }
+    
+            .product-card {
+                border: 1px solid #000;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+    
+            /* Simplify font and size for print readability */
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+    
+            /* Remove margins for better fit on printed page */
+            body, html {
+                margin: 0;
+                padding: 0;
+            }
+    
+            /* Hide any interactive elements */
+            a {
+                text-decoration: none;
+                color: black;
+            }
+    
+            /* Footer content formatted simply */
+            .footer p {
+                font-size: 10pt;
+                color: black;
+            }
+    
+            /* Hide script elements (JavaScript isn't needed for print) */
+            script {
+                display: none;
+            }
+            .footer{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">JD Fragrance</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav class ="navbar">
+            <ul>
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="About.htm">About Us</a></li>
+                <li><a href="product.htm">Products</a></li>
+                <li><a href="payment.htm">Payment</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </header>
+
+    <div class="filters">
+        <span>Filter by</span>
+        <span>Collections ▼</span>
+        <span>Fragrance Families ▼</span>
+        <span>Gender ▼</span>
+        <span>Occasions ▼</span>
+        <span>Sort by ▼</span>
+    </div>
+
+    <main class="products">
+        <h2>Best Selling Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/sauvage.jpg" alt="Dior Sauvage EDT">
+                <h3>Dior Sauvage EDT</h3>
+                <div class="rating">★★★★★ (60)</div>
+                <p>$ 270.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/fahrenheit.jpg" alt="Dior Fahrenheit EDT">
+                <h3>Dior Fahrenheit EDT</h3>
+                <div class="rating">★★★★☆ (60)</div>
+                <p>$ 270.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/armani.jpg" alt="Armani SWYI">
+                <h3>Armani SWYI</h3>
+                <div class="rating">★★★★★ (60)</div>
+                <p>$ 220.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/initio.jpg" alt= "Luxurious Essence">
+                <h3>Luxurious Essence</h3>
+                <div class="rating">★★★★★ (212)</div>
+                <p>$ 260.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/invictus-victory.jpg" alt="PR Invictus">
+                <h3>PR Invictus</h3>
+                <div class="rating">★★★★☆ (60)</div>
+                <p>$ 200.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/ocean.jpg" alt="Prada Ocean">
+                <h3>Prada Ocean</h3>
+                <div class="rating">★★★★☆ (60)</div>
+                <p>$ 220.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/black.webp" alt="Prada Milano">
+                <h3>Prada Milano</h3>
+                <div class="rating">★★★★☆ (60)</div>
+                <p>$ 220.00 100ml</p>
+            </div>
+            <div class="product-card">
+                <img src="images/lemale.jpg" alt="UltraMale JPG">
+                <h3>UltraMale JPG</h3>
+                <div class="rating">★★★★☆ (60)</div>
+                <p>$ 220.00 100ml</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>JD Fragrance</p>
+        <div class="social-icons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <p>© 2024 JD Fragrance Inc. All rights reserved</p>
+    </div>
+
+    <script src = "burger.js"></script>
+</body>
+</html>

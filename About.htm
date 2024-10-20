@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JD Fragrance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6; /* More comfortable reading */
+            letter-spacing: 0.5px; /* Adds slight spacing */
+         
+        }
+        .navbar {
+            background-color: #333;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .navbar .logo a {
+            font-size: 24px;
+            color: #ff6600;
+            font-weight: bold;
+            text-decoration: none;
+            
+        }
+        
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+        
+        }
+        .navbar ul li a:hover {
+            color: #ff6600;
+        }
+        .navbar .shop-now-btn {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar .shop-now-btn:hover {
+            background-color: #e65c00;
+        }
+        .navbar .icons {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .icons i {
+            color: #fff;
+            margin-left: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .navbar .icons i:hover {
+            color: #ff6600;
+        }
+
+        .hero {
+          
+            padding: 50px 30px;
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 70px 30px; /* Increase padding for more space */
+    background-image: url('images'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Ensure text is legible against the background */
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #ff6600;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .section {
+            padding: 50px 30px;
+            text-align: center;
+            background-color: #1a1a1a;
+        }
+        .section h2 {
+            color: #ff6600;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+        }
+
+        .story {
+            padding: 30px 0;
+            background-color: #1a1a1a;
+        }
+        .story h3 {
+            font-size: 26px;
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+        .story p {
+            font-size: 16px;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .mission-vision {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 30px;
+            background-color: #1a1a1a;
+        }
+        .mission-vision .section {
+            width: 45%;
+            text-align: left;
+        }
+        .mission-vision .section h2 {
+            font-size: 24px;
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+        .mission-vision .section p {
+            color: #ccc;
+        }
+
+        .footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer .social-icons {
+            margin: 20px 0;
+        }
+        .footer .social-icons i {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .footer .social-icons i:hover {
+            color: #ff6600;
+        }
+        .footer p {
+            color: #ff6600;
+            margin: 0;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px;
+            }
+            .navbar ul {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul.show {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding: 30px 15px;
+            }
+            .hero .text, .hero .image {
+                max-width: 100%;
+            }
+            .hero .text h1 {
+                font-size: 32px;
+            }
+            .hero .text p {
+                font-size: 16px;
+            }
+            .hero .image {
+                margin-top: 30px;
+            }
+            .content {
+                padding: 30px 15px;
+            }
+            .content h2 {
+                font-size: 24px;
+            }
+            .content p {
+                font-size: 14px;
+            }
+            .footer .social-icons i {
+                margin: 0 10px;
+            }
+            .mission-vision {
+                flex-direction: column; /* Stack sections vertically */
+                padding: 30px 15px; /* Reduce padding */
+            }
+            .mission-vision .section {
+                width: 100%; /* Full width for mobile */
+                margin-bottom: 20px; /* Space between sections */
+                padding: 10px; /* Add padding for text */
+            }
+            .mission-vision .section h2 {
+                font-size: 22px; /* Increase font size for headings */
+            }
+            .mission-vision .section p {
+                font-size: 16px; /* Increase font size for text */
+                line-height: 1.5; /* Improve line spacing for readability */
+                color: #ccc; /* Ensure text color is readable */
+            }
+
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            /* Navigation adjustments for tablet view */
+            .navbar ul {
+                gap: 20px; /* Adjust spacing between links */
+            }
+            .navbar ul li a {
+                font-size: 18px; /* Adjust font size */
+            }
+        
+            /* Adjust hero section for tablets */
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 17px;
+            }
+        
+            /* Adjust sections for tablet view */
+            .section h2 {
+                font-size: 26px;
+            }
+            .section p, .story p {
+                font-size: 15px;
+            }
+        
+            /* Mission and Vision adjustments for tablets */
+            .mission-vision {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+            .mission-vision .section {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .mission-vision .section h2 {
+                font-size: 22px;
+            }
+            .mission-vision .section p {
+                font-size: 15px;
+            }
+            
+        }
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+
+            .hero, .section, .story, .mission-vision .section {
+                background-color: #fff;
+                color: #000;
+                padding: 10px;
+            }
+
+            .hero h1, .section h2 {
+                color: #000;
+            }
+
+            .hero p, .section p, .story p {
+                color: #000;
+            }
+
+            .mission-vision {
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .mission-vision .section {
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 10px;
+            }
+
+            /* Hide unnecessary elements */
+            .navbar, .footer, .social-icons, .hamburger, .icons {
+                display: none;
+            }
+
+            /* Adjust font size for print readability */
+            h1, h2, h3 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo"><a href ="index.htm">JD Fragrance</a></div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="About.htm">About Us</a></li>
+            <li><a href="product.htm">Products</a></li>
+            <li><a href="payment.htm">Payment</a></li>
+        </ul>
+       
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>About Us</h1>
+        <p>At JD Fragrance, we believe that perfumes are more than just scents; they are expressions of one's individuality and style. Our passion for exquisite fragrances led us to curate a collection that captures the essence of diverse personalities, bringing you an unparalleled olfactory experience.</p>
+    </div>
+
+    <div class="section story">
+        <h3>Our Story</h3>
+        <p>JD Fragrance was founded by a group of perfume enthusiasts with a shared vision to create a haven for perfume lovers seeking authentic, locally-inspired fragrances. Inspired by the diversity and richness of cultures around the world, we set out on a journey to curate a collection of scents that capture the essence of each region. Our aim is to bring you closer to the heart and soul of different cultures through the art of perfumery.</p>
+    </div>
+
+    <div class="mission-vision">
+        <div class="section">
+            <h2>Mission</h2>
+            <p>At JD Fragrance, we believe that perfumes are more than just scents; they are expressions of one's individuality and style. Our passion for exquisite fragrances led us to curate a collection that captures the essence of diverse personalities, bringing you an unparalleled olfactory experience.</p>
+        </div>
+        <div class="section">
+            <h2>Vision</h2>
+            <p>At JD Fragrance, we believe that perfumes are more than just scents; they are expressions of one's individuality and style. Our passion for exquisite fragrances led us to curate a collection that captures the essence of diverse personalities, bringing you an unparalleled olfactory experience.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>JD Fragrance</p>
+        <div class="social-icons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <p>© 2024 JD Fragrance Inc. All rights reserved</p>
+    </div>
+    <script src = "burger.js">
+       
+    </script>
+</body>
+</html>
